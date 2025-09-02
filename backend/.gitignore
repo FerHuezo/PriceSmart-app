@@ -1,0 +1,4 @@
+# Esto asegura que no suba al repositorio el archivo de variables de entorno
+# Node modules
+.env
+*/.env

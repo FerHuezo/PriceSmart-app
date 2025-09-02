@@ -33,7 +33,7 @@ loginController.login = async (req, res) => {
       email === config.emailAdmin.email &&
       password === config.emailAdmin.password
     ) {
-      userType = "Admin";
+      userType = "admin";
       userFound = { _id: "Admin" };
     } else {
       // 2. Empleado
@@ -89,7 +89,7 @@ loginController.login = async (req, res) => {
     }
 
     // Generar token
-    jsonwebtoken.sign(
+    const token = jsonwebtoken.sign(
       //1- Que voy a guardar
       { id: userFound._id, userType },
       //2- Clave secreta

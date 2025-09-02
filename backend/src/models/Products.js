@@ -11,10 +11,10 @@ import { Schema, model } from "mongoose";
 const productsSchema = new Schema(
   {
     name: {
-      type: Number,
+      type: String,
       require: true,
     },
-    desciption: {
+    description: {
       type: String,
     },
     price: {
@@ -32,6 +32,6 @@ const productsSchema = new Schema(
     timestamps: true,
     strict: false,
   }
-);
+);  
 
 export default model("Products", productsSchema);

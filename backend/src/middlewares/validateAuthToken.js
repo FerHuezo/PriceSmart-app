@@ -23,10 +23,9 @@ export const validateAuthToken = (allowedUserTypes = []) => {
       req.user = decoded;
 
       //Verificar el rol
-      if (!allowedUserTypes.includes(decoded.userType)) {
+      if (!allowedUserTypes.includes(decoded.userType.toLowerCase())) {
         return res.json({ message: "Access denied" });
       }
-
       //Si el si está, podemos continuar
       next();
     } catch (error) {
